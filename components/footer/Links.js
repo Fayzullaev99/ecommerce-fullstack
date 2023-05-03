@@ -1,18 +1,26 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 export default function Links() {
   return (
     <div className={styles.footer__links}>
       {links.map((link, i) => (
-        <ul>
+        <ul key={link.heading}>
           {i === 0 ? (
-            <img src="logo.svg" alt="" />
+            <Image
+              src="logo.svg"
+              alt="logo"
+              width="140"
+              height="40"
+              sizes="(max-width: 768px) 100vw,
+                    (max-width: 1200px) 50vw,
+                    33vw" />
           ) : (
             <b>{link.heading}</b>
           )}
           {link.links.map((link) => (
-            <li>
+            <li key={link.name}>
               <Link href={link.link}>{link.name}</Link>
             </li>
           ))}

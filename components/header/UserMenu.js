@@ -7,10 +7,16 @@ function UserMenu({ loggedIn }) {
             <h4>Welcome to Shoppay!</h4>
             {loggedIn ? (
                 <div className={styles.flex}>
-                    <img
+                    <Image
                         src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
                         alt=""
                         className={styles.menu__img}
+                        width="28"
+                        height="28"
+                        sizes="(max-width: 768px) 100vw,
+                                  (max-width: 1200px) 50vw,
+                                  33vw"
+
                     />
                     <div className={styles.col}>
                         <span>Welcome Back,</span>
