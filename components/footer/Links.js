@@ -8,7 +8,7 @@ export default function Links() {
       {links.map((link, i) => (
         <ul key={link.heading}>
           {i === 0 ? (
-            <Image
+            <img
               src="logo.svg"
               alt="logo"
               width="140"

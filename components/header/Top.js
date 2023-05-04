@@ -6,9 +6,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import UserMenu from './UserMenu'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react'
 
 function Top({ country }) {
-    const [loggedIn, setLoggedIn] = useState(true)
+    const { data: session } = useSession()
     const [visible, setVisible] = useState(false)
     return (
         <div className={styles.top}>
@@ -16,7 +17,7 @@ function Top({ country }) {
                 <div></div>
                 <ul className={styles.top__list}>
                     <li className={styles.top__item}>
-                        <Image
+                        <img
                             src={country.flag}
                             alt="flag"
                             width="28"
@@ -45,18 +46,18 @@ function Top({ country }) {
                     </li>
                     <li className={styles.top__item} onMouseOver={() => setVisible(true)} onMouseLeave={() => setVisible(false)}>
                         {
-                            loggedIn
+                            session
                                 ? <li className={styles.top__item}>
                                     <div className={styles.flex}>
-                                        <Image
-                                            src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+                                        <img
+                                            src={session.user.image}
                                             alt="user"
                                             width="28"
                                             height="28"
                                             sizes="(max-width: 768px) 100vw,
                                           (max-width: 1200px) 50vw,
                                           33vw" />
-                                        <span>Sanjar</span>
+                                        <span>{session.user.name}</span>
                                         <RiArrowDropDownFill />
                                     </div>
                                 </li>
@@ -68,7 +69,7 @@ function Top({ country }) {
                                     </div>
                                 </li>
                         }
-                        {visible && <UserMenu loggedIn={loggedIn} />}
+                        {visible && <UserMenu session={session} />}
                     </li>
                 </ul>
             </div>

@@ -11,7 +11,7 @@ function Main() {
         <div className={styles.main}>
             <div className={styles.main__container}>
                 <Link href="/" className={styles.main__logo}>
-                    <Image
+                    <img
                         src="logo.svg"
                         alt="logo"
                         width="140"
