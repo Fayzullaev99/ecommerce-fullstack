@@ -1,3 +1,4 @@
+import React from "react"
 import { BiLeftArrowAlt } from "react-icons/bi"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
@@ -5,7 +6,6 @@ import styles from '../styles/signin.module.scss'
 import Link from "next/link"
 import { Form, Formik } from "formik"
 import LoginInput from "@/components/inputs/loginInput"
-import { useState } from "react"
 import * as Yup from "yup"
 import CircledIconBtn from "@/components/buttons/circledIconBtn"
 import { getCsrfToken, getProviders, getSession, signIn } from "next-auth/react"
@@ -27,8 +27,8 @@ const initialValues = {
   login_error: ""
 }
 function signin({ providers, callbackUrl, csrfToken }) {
-  const [loading, setLoading] = useState(false)
-  const [user, setUser] = useState(initialValues)
+  const [loading, setLoading] = React.useState(false)
+  const [user, setUser] = React.useState(initialValues)
   const { login_email, login_password, name, email, password, conf_password, success, error, login_error } = user
   const handleChange = (e) => {
     // const {name,value} = e.target
@@ -110,7 +110,7 @@ function signin({ providers, callbackUrl, csrfToken }) {
               <BiLeftArrowAlt />
             </div>
             <span>
-              We'd be happy to join us ! <Link href={'/'}>Go Store</Link>
+              We'd be happy to join us ! <Link href="/">Go Store</Link>
             </span>
           </div>
           <div className={styles.login__form}>
@@ -152,7 +152,7 @@ function signin({ providers, callbackUrl, csrfToken }) {
                     <CircledIconBtn type={'submit'} text={'Sign in'} />
                     {login_error && <span className={styles.error}>{login_error}</span>}
                     <div className={styles.forgot}>
-                      <Link href={'/forget'}>Forgot password</Link>
+                      <Link href={'/auth/forgot'}>Forgot password</Link>
                     </div>
                   </Form>
                 )

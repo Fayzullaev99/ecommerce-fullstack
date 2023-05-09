@@ -4,6 +4,7 @@ import db from "@/utils/db";
 import { validationEmail } from "@/utils/validation";
 import { createActivationToken } from "@/utils/tokens";
 import { sendEmail } from "@/utils/sendEmails";
+import activateEmailTemplate from "@/emails/activateEmailTemplate";
 
 export default async function handler(req, res) {
     if (req.method === 'POST') {
@@ -30,7 +31,7 @@ export default async function handler(req, res) {
                 id:addedUser._id.toString(),
             })
             const url = `${process.env.BASE_URL}/activate/${activation_token}`
-            sendEmail(email,url,"","Activate your account")
+            sendEmail(email,url,"","Activate your account",activateEmailTemplate)
             await db.disconnectDb()
             res.json({message:"Register succes! Please activate your email"})
             // res.send(url)
