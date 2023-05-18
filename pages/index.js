@@ -16,7 +16,7 @@ export default function Home({country}) {
         <div className={styles.home}>
         <div className={styles.container}>
           <Main />
-          {/* <FlashDeals /> */}
+          <FlashDeals />
           </div>
         </div>
         <Footer country={country} />

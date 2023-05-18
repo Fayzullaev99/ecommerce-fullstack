@@ -32,7 +32,7 @@ function getRemainingHours(nowDayjs, timestamDayjs) {
 }
 function getRemainingDays(nowDayjs, timestamDayjs) {
   const days = timestamDayjs.diff(nowDayjs, "days");
-  return days.toString();
+  return (days).toString();
 }
 
 function padWithZeros(number, length) {

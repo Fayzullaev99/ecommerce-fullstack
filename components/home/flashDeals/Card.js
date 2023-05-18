@@ -27,7 +27,7 @@ export default function FlashCard({ product }) {
         </span>
       </div>
       <div className={styles.card__bar}>
-        <div className={styles.card__bar_inner} style={{ width: "75%" }}></div>
+        <div className={styles.card__bar_inner} style={{ width: `${product.sold}%` }}></div>
       </div>
       <div className={styles.card__percentage}>{product.sold}%</div>
     </div>

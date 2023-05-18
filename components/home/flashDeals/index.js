@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation } from "swiper";
-import { flashDealsArray } from "../../../data/home";
+import { flashDealsArray } from "@/data/home";
 import FlashCard from "./Card";
 export default function FlashDeals() {
   return (
@@ -18,7 +18,7 @@ export default function FlashDeals() {
           FLASH SALE
           <MdFlashOn />
         </h1>
-        <Countdown date={new Date(2022, 12, 30)} />
+        <Countdown date={new Date(2023, 4, 29)} />
       </div>
       <Swiper
         slidesPerView={1}
