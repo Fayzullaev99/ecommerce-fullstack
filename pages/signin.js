@@ -1,4 +1,4 @@
-import React from "react"
+import {useState} from "react"
 import { BiLeftArrowAlt } from "react-icons/bi"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
@@ -27,8 +27,8 @@ const initialValues = {
   login_error: ""
 }
 function signin({ providers, callbackUrl, csrfToken }) {
-  const [loading, setLoading] = React.useState(false)
-  const [user, setUser] = React.useState(initialValues)
+  const [loading, setLoading] = useState(false)
+  const [user, setUser] = useState(initialValues)
   const { login_email, login_password, name, email, password, conf_password, success, error, login_error } = user
   const handleChange = (e) => {
     // const {name,value} = e.target

@@ -13,6 +13,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
+    "dayjs": "^1.11.7",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
     "formik": "^2.2.9",
@@ -35,6 +36,7 @@
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
     "sass": "^1.62.1",
+    "swiper": "^9.3.2",
     "yup": "^1.1.1"
   }
 }
